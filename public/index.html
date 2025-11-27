@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compressor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-white flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-2xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight">File Compressor</h1>
+            <p class="text-lg text-gray-400 mt-2">Compress or decompress your files with ease.</p>
+        </header>
+
+        <main class="bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 border border-gray-700">
+            
+            <div class="flex justify-center gap-x-6 mb-6">
+                <label for="mode-compress" class="flex items-center space-x-2 cursor-pointer text-lg">
+                    <input type="radio" name="mode" id="mode-compress" value="compress" class="form-radio h-5 w-5 text-blue-600 bg-gray-700 border-gray-600 focus:ring-blue-500" checked>
+                    <span>Compress</span>
+                </label>
+                <label for="mode-decompress" class="flex items-center space-x-2 cursor-pointer text-lg">
+                    <input type="radio" name="mode" id="mode-decompress" value="decompress" class="form-radio h-5 w-5 text-green-600 bg-gray-700 border-gray-600 focus:ring-green-500">
+                    <span>Decompress</span>
+                </label>
+            </div>
+
+            <div id="drop-zone" class="drop-zone border-4 border-dashed border-gray-600 rounded-xl p-8 text-center cursor-pointer">
+                <input type="file" id="file-input" class="file-input">
+                <div class="flex flex-col items-center text-gray-400">
+                    <svg class="w-16 h-16 mb-4" xmlns="http://www.w.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l-3 3m3-3l3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                    </svg>
+                    <p id="drop-zone-text" class="text-xl font-semibold">Drag & drop your file to compress</p>
+                    <p class="mt-1">or <span class="text-blue-400 font-medium">click to browse</span></p>
+                </div>
+            </div>
+
+            <div id="status-section" class="mt-6 min-h-[120px]">
+                </div>
+
+            <div class="mt-6">
+                <button id="action-button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded-lg text-lg transition duration-300 transform hover:scale-105 disabled:bg-gray-500 disabled:cursor-not-allowed disabled:transform-none" disabled>
+                    Compress File
+                </button>
+                <a id="download-button" href="#" class="hidden w-full text-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-4 rounded-lg text-lg transition duration-300 transform hover:scale-105">
+                    Download File
+                </a>
+            </div>
+
+        </main>
+        
+        <footer class="text-center mt-8">
+            <p class="text-gray-500">A project to connect a C backend with a modern web UI.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
